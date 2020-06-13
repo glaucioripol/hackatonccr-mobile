@@ -2,15 +2,9 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather as Icon } from '@expo/vector-icons'
 
-import { Notifications } from '../screens'
+import { Notifications, PhysicalExercises, MapScreen, ActivityHistory } from '../screens'
 
-import { primaryColor, secondaryColor } from '../common/colors'
-
-const icons = {
-  characters: 'ios-person',
-  episodes: 'ios-film',
-  planets: 'ios-planet',
-}
+import { primaryColor, blueMoreClean } from '../common/colors'
 
 interface IParamsScrensOptions {
   route: { name: string }
@@ -20,15 +14,23 @@ interface IParamsTabBarIcon {
   size: number | undefined
 }
 
+const icons = {
+  notifications: 'bell',
+  physicalExercises: 'activity',
+  mapScreen: 'map-pin',
+  activityHistory: 'clock',
+  profile: 'user',
+}
+
 const getScreenOptions = ({ route: { name } }: IParamsScrensOptions) => ({
-  // tabBarIcon: ({ color, size }) => <Icon name={icons[name]} size={size} color={color} />,
   // eslint-disable-next-line react/display-name
-  tabBarIcon: ({ color, size }: IParamsTabBarIcon) => <Icon name="bell" size={size} color={color} />,
+  tabBarIcon: ({ color, size }: IParamsTabBarIcon) => <Icon name={icons[name]} size={size} color={color} />,
 })
 
 const getTabBarOptions = {
   activeTintColor: '#fff',
-  inactiveTintColor: secondaryColor,
+  inactiveTintColor: blueMoreClean,
+  showLabel: false,
   style: {
     backgroundColor: primaryColor,
   },
@@ -39,6 +41,10 @@ export const BottomBar: React.FC = () => {
   return (
     <Tab.Navigator screenOptions={getScreenOptions} tabBarOptions={getTabBarOptions}>
       <Tab.Screen name="notifications" component={Notifications} />
+      <Tab.Screen name="activityHistory" component={ActivityHistory} />
+      <Tab.Screen name="mapScreen" component={MapScreen} />
+      <Tab.Screen name="profile" component={MapScreen} />
+      <Tab.Screen name="physicalExercises" component={PhysicalExercises} />
     </Tab.Navigator>
   )
 }

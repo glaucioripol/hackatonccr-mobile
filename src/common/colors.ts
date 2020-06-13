@@ -1,2 +1,3 @@
 export const primaryColor = '#2699FB'
-export const secondaryColor = '#2699FB1A'
+export const blueMoreClean = '#67B7FC'
+export const secondaryColor = '#F1F9FF'
