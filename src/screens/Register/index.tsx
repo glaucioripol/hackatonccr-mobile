@@ -10,6 +10,8 @@ import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, co
 
 import { Card, MyInput, RadiusButton } from '../../components'
 
+import { IcMulher } from '../../assets/svg/IcMulher'
+
 export const Register: React.FC = () => {
   const { navigate } = useNavigation()
   const [dataForm, setDataForm] = useState({
@@ -66,8 +68,12 @@ export const Register: React.FC = () => {
           <Text style={styles.textWithColor}>{whatIsYourGender}</Text>
           <View style={styles.containerOptionGendersContents}>
             <View style={styles.containerOptionGenders}>
-              <View style={[styles.optionsItemGender, styles.optionsItemGenderSelected, styles.haveNext]} />
-              <View style={styles.optionsItemGender} />
+              <View style={[styles.optionsItemGender, styles.optionsItemGenderSelected, styles.haveNext]}>
+                <IcMulher selected />
+              </View>
+              <View style={styles.optionsItemGender}>
+                <IcMulher />
+              </View>
             </View>
           </View>
         </View>

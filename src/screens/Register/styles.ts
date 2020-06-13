@@ -41,6 +41,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   optionsItemGender: {
+    padding: 8,
     borderWidth: 2,
     width: 64,
     height: 64,
