@@ -6,16 +6,18 @@ import { RectButton } from 'react-native-gesture-handler'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { informationRetrieveState } from '../../redux/information/selectors'
-import * as retrieveInformationActions from '../../redux/information/Retrieve/actions'
+import { retrieveInformationActions } from '../../redux/information/Retrieve/actions'
+import { AuthActions } from '../../redux/auth/actions'
 
 export const Home: React.FC = () => {
   const dispatch = useDispatch()
   const { navigate } = useNavigation()
   function goToDetails() {
     // navigate('details')
-    dispatch(retrieveInformationActions.success(['bunda', 'xota', 'cu']))
+    dispatch(AuthActions.loginSuccess('111111', 'glaucinho'))
   }
-  const alo = useSelector(informationRetrieveState)
+  // const alo = useSelector(informationRetrieveState)
+  const alo = useSelector((state) => state.auth)
   return (
     <View>
       <Text>Aqui é a home</Text>

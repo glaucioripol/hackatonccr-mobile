@@ -9,8 +9,8 @@ export const Routes: React.FC = () => {
   return (
     <NavigationContainer>
       <StackNavigator.Navigator headerMode="none">
-        <StackNavigator.Screen name="register" component={Register} />
         <StackNavigator.Screen name="home" component={Home} />
+        <StackNavigator.Screen name="register" component={Register} />
         <StackNavigator.Screen name="details" component={Details} />
       </StackNavigator.Navigator>
     </NavigationContainer>
