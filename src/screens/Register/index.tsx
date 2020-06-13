@@ -11,6 +11,7 @@ import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, co
 import { Card, MyInput, RadiusButton } from '../../components'
 
 import { IcMulher } from '../../assets/svg/IcMulher'
+import { IcHomem } from '../../assets/svg/IcHomem'
 
 export const Register: React.FC = () => {
   const { navigate } = useNavigation()
@@ -69,7 +70,7 @@ export const Register: React.FC = () => {
           <View style={styles.containerOptionGendersContents}>
             <View style={styles.containerOptionGenders}>
               <View style={[styles.optionsItemGender, styles.optionsItemGenderSelected, styles.haveNext]}>
-                <IcMulher selected />
+                <IcHomem selected />
               </View>
               <View style={styles.optionsItemGender}>
                 <IcMulher />

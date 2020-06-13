@@ -1,8 +1,6 @@
 import React, { useCallback } from 'react'
 import { SvgCss } from 'react-native-svg'
 
-// import { Container } from './styles';
-
 import { primaryColor, secondaryColor } from '../../common/colors'
 
 interface IProps {
