@@ -8,6 +8,11 @@ export const styles = StyleSheet.create({
     backgroundColor: secondaryColor,
     flex: 1,
     marginTop: Constants.statusBarHeight,
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 28,
+  },
+
+  textWithColor: {
+    color: primaryColor,
   },
 })
