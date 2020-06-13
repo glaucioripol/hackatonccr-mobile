@@ -21,7 +21,11 @@ export const styles = StyleSheet.create({
   },
 
   spaceBetweenInputAndDescribe: {
-    marginTop: 80,
+    marginTop: 40,
+  },
+
+  spaceBetweenInputs: {
+    marginTop: 24,
   },
 
   containerGender: {
@@ -51,7 +55,7 @@ export const styles = StyleSheet.create({
   },
 
   containerButton: {
-    padding: 24,
+    padding: 16,
   },
   containerContentButton: {
     flexDirection: 'row',

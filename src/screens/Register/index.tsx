@@ -5,13 +5,26 @@ import { Feather as Icon } from '@expo/vector-icons'
 import { styles } from './styles'
 
 import { primaryColor } from '../../common/colors'
-import { emailText, describeRegisterScreen, whatIsYourGender, continueText } from '../../common/strings'
+import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, continueText } from '../../common/strings'
 
 import { Card, MyInput, RadiusButton } from '../../components'
 
 export const Register: React.FC = () => {
-  const [cellphoneUser, setCellphoneUser] = useState('')
-  const nextStep = () => {
+  const [dataForm, setDataForm] = useState({
+    email: '',
+    cellphoneNumber: '',
+  })
+
+  function handleChangeInputs(fieldName: string) {
+    return (text: string) => {
+      setDataForm({
+        ...dataForm,
+        [fieldName]: text,
+      })
+    }
+  }
+
+  function nextStep() {
     // requsiçõa backend e movimentação
   }
   return (
@@ -30,10 +43,19 @@ export const Register: React.FC = () => {
         <Text style={[styles.textWithColor, styles.textDescribe]}>{describeRegisterScreen}</Text>
 
         <View style={styles.spaceBetweenInputAndDescribe} />
+
         <MyInput
           labelText={emailText}
-          currenteValueInput={cellphoneUser}
-          getCurrentValueInputed={setCellphoneUser}
+          currenteValueInput={dataForm.email}
+          getCurrentValueInputed={handleChangeInputs('email')}
+          maxLength={11}
+        />
+
+        <View style={styles.spaceBetweenInputs} />
+        <MyInput
+          labelText={whatsAppNumber}
+          currenteValueInput={dataForm.cellphoneNumber}
+          getCurrentValueInputed={handleChangeInputs('cellphoneNumber')}
           maxLength={11}
         />
 
