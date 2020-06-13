@@ -9,7 +9,7 @@ export const Routes: React.FC = () => {
   const StackNavigator = createStackNavigator()
   return (
     <NavigationContainer>
-      <StackNavigator.Navigator headerMode="none">
+      <StackNavigator.Navigator initialRouteName="bottomBar" headerMode="none">
         <StackNavigator.Screen name="bottomBar" component={BottomBar} />
         <StackNavigator.Screen name="home" component={Home} />
         <StackNavigator.Screen name="register" component={Register} />
