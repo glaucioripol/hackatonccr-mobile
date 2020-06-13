@@ -39,7 +39,7 @@ const getTabBarOptions = {
 export const BottomBar: React.FC = () => {
   const Tab = createBottomTabNavigator()
   return (
-    <Tab.Navigator screenOptions={getScreenOptions} tabBarOptions={getTabBarOptions}>
+    <Tab.Navigator screenOptions={getScreenOptions} tabBarOptions={getTabBarOptions} initialRouteName="mapScreen">
       <Tab.Screen name="notifications" component={Notifications} />
       <Tab.Screen name="activityHistory" component={ActivityHistory} />
       <Tab.Screen name="mapScreen" component={MapScreen} />
