@@ -15,4 +15,57 @@ export const styles = StyleSheet.create({
   textWithColor: {
     color: primaryColor,
   },
+
+  textDescribe: {
+    textAlign: 'center',
+  },
+
+  spaceBetweenInputAndDescribe: {
+    marginTop: 80,
+  },
+
+  containerGender: {
+    marginTop: 24,
+  },
+  containerOptionGendersContents: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  containerOptionGenders: {
+    marginTop: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  optionsItemGender: {
+    borderWidth: 2,
+    width: 64,
+    height: 64,
+    borderRadius: 8,
+    borderColor: primaryColor,
+  },
+  haveNext: {
+    marginRight: 26,
+  },
+  optionsItemGenderSelected: {
+    backgroundColor: primaryColor,
+  },
+
+  containerButton: {
+    padding: 24,
+  },
+  containerContentButton: {
+    flexDirection: 'row',
+  },
+
+  textButtonContainer: {
+    flex: 0.9,
+  },
+  textButton: {
+    color: '#FFF',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  iconButton: {
+    flex: 0.1,
+  },
 })
