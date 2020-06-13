@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, ScrollView, Text } from 'react-native'
 import { Feather as Icon } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 
 import { styles } from './styles'
 
@@ -10,9 +11,10 @@ import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, co
 import { Card, MyInput, RadiusButton } from '../../components'
 
 export const Register: React.FC = () => {
+  const { navigate } = useNavigation()
   const [dataForm, setDataForm] = useState({
     email: '',
-    cellphoneNumber: '',
+    cellphone: '',
   })
 
   function handleChangeInputs(fieldName: string) {
@@ -26,6 +28,8 @@ export const Register: React.FC = () => {
 
   function nextStep() {
     // requsiçõa backend e movimentação
+    // navigate
+    // console.log(dataForm)
   }
   return (
     <ScrollView style={styles.container}>
@@ -48,14 +52,13 @@ export const Register: React.FC = () => {
           labelText={emailText}
           currenteValueInput={dataForm.email}
           getCurrentValueInputed={handleChangeInputs('email')}
-          maxLength={11}
         />
 
         <View style={styles.spaceBetweenInputs} />
         <MyInput
           labelText={whatsAppNumber}
-          currenteValueInput={dataForm.cellphoneNumber}
-          getCurrentValueInputed={handleChangeInputs('cellphoneNumber')}
+          currenteValueInput={dataForm.cellphone}
+          getCurrentValueInputed={handleChangeInputs('cellphone')}
           maxLength={11}
         />
 
