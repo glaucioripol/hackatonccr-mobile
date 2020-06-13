@@ -1,26 +1,44 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import AsyncStorage from '@react-native-community/async-storage'
+import { persistStore, persistReducer } from 'redux-persist'
+
 import { rootSaga } from '../saga'
-import { IInformationCrud, crudInformationReducer } from './information'
+
+import { authReducer, IAuthState } from './auth'
+import { crudInformationReducer, IInformationCrud } from './information'
 
 export interface AppState {
+  auth: IAuthState
   information: IInformationCrud
 }
 
-export const reducers = combineReducers<AppState>({
-  information: crudInformationReducer,
-})
+function getReducers() {
+  return combineReducers<AppState>({
+    auth: authReducer,
+    information: crudInformationReducer,
+  })
+}
 
 function createAppStore() {
+  const reducers = getReducers()
+
   const sagaMiddleware = createSagaMiddleware()
 
-  const composeEnhancers = compose
+  const persistConfig = {
+    key: 'root',
+    whitelist: ['auth'],
+    storage: AsyncStorage,
+  }
 
-  const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)))
+  const persistedReducer = persistReducer(persistConfig, reducers)
+
+  const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware))
+  const persistor = persistStore(store)
 
   sagaMiddleware.run(rootSaga)
 
-  return { store }
+  return { store, persistor }
 }
 
-export const { store } = createAppStore()
+export const { store, persistor } = createAppStore()

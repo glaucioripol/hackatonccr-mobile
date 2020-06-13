@@ -28,7 +28,7 @@ export const Register: React.FC = () => {
 
   function nextStep() {
     // requsiçõa backend e movimentação
-    // navigate
+    // navigate('next')
     // console.log(dataForm)
   }
   return (
