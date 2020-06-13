@@ -11,22 +11,16 @@ export const reducers = combineReducers<AppState>({
   information: crudInformationReducer,
 })
 
-// export function createAppStore() {
-//   const sagaMiddleware = createSagaMiddleware()
+function createAppStore() {
+  const sagaMiddleware = createSagaMiddleware()
 
-//   const composeEnhancers = compose
+  const composeEnhancers = compose
 
-//   const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)))
+  const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)))
 
-//   sagaMiddleware.run(rootSaga)
+  sagaMiddleware.run(rootSaga)
 
-//   return { store }
-// }
+  return { store }
+}
 
-const sagaMiddleware = createSagaMiddleware()
-
-const composeEnhancers = compose
-
-export const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)))
-
-sagaMiddleware.run(rootSaga)
+export const { store } = createAppStore()

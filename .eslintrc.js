@@ -29,5 +29,6 @@ module.exports = {
     'space-before-function-paren': 'off',
     'comma-dangle': 'off',
     camelcase: 'off',
+    'react/prop-types': 'off',
   },
 }
