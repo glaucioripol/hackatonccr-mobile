@@ -5,7 +5,7 @@ import { primaryColor } from '../../common/colors'
 export const styles = StyleSheet.create({
   buttonRadius: {
     backgroundColor: primaryColor,
-    borderRadius: 28,
+    borderRadius: 800,
     padding: 16,
   },
 })

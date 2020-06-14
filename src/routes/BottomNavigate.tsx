@@ -4,7 +4,7 @@ import { FontAwesome as Icon } from '@expo/vector-icons'
 
 import { Notifications, PhysicalExercises, MapScreen, ActivityHistory } from '../screens'
 
-import { primaryColor, blueMoreClean } from '../common/colors'
+import { primaryColor } from '../common/colors'
 
 interface IParamsScrensOptions {
   route: { name: string }
