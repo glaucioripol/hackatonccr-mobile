@@ -1,4 +1,4 @@
 import { AppState } from '../index'
-// import { IInformationState } from './types'
+import { IAuthState } from './types'
 
-// export const informationRetrieveState = (state: AppState): IInformationState => state.information.retrieve
+export const authState = (state: AppState): IAuthState => state.auth
