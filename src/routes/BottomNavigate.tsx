@@ -1,6 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Feather as Icon } from '@expo/vector-icons'
+import { FontAwesome as Icon } from '@expo/vector-icons'
 
 import { Notifications, PhysicalExercises, MapScreen, ActivityHistory } from '../screens'
 
@@ -16,9 +16,9 @@ interface IParamsTabBarIcon {
 
 const icons = {
   notifications: 'bell',
-  physicalExercises: 'activity',
-  mapScreen: 'map-pin',
-  activityHistory: 'clock',
+  physicalExercises: 'heartbeat',
+  mapScreen: 'map-marker',
+  activityHistory: 'clock-o',
   profile: 'user',
 }
 
@@ -29,7 +29,7 @@ const getScreenOptions = ({ route: { name } }: IParamsScrensOptions) => ({
 
 const getTabBarOptions = {
   activeTintColor: '#fff',
-  inactiveTintColor: blueMoreClean,
+  inactiveTintColor: '#50BED0',
   showLabel: false,
   style: {
     backgroundColor: primaryColor,

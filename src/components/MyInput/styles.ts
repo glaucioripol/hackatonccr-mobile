@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { primaryColor, secondaryColor } from '../../common/colors'
+import { primaryColor } from '../../common/colors'
 
 export const styles = StyleSheet.create({
   label: {
@@ -9,11 +9,6 @@ export const styles = StyleSheet.create({
 
   input: {
     borderBottomWidth: 2,
-  },
-  inputInFocus: {
     borderBottomColor: primaryColor,
-  },
-  inputInBlur: {
-    borderBottomColor: secondaryColor,
   },
 })
