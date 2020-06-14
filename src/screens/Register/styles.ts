@@ -17,42 +17,16 @@ export const styles = StyleSheet.create({
   },
 
   textDescribe: {
+    marginTop: 10,
     textAlign: 'center',
   },
 
   spaceBetweenInputAndDescribe: {
-    marginTop: 40,
+    marginTop: 32,
   },
 
   spaceBetweenInputs: {
     marginTop: 24,
-  },
-
-  containerGender: {
-    marginTop: 24,
-  },
-  containerOptionGendersContents: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  containerOptionGenders: {
-    marginTop: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  optionsItemGender: {
-    padding: 8,
-    borderWidth: 2,
-    width: 64,
-    height: 64,
-    borderRadius: 8,
-    borderColor: primaryColor,
-  },
-  haveNext: {
-    marginRight: 26,
-  },
-  optionsItemGenderSelected: {
-    backgroundColor: primaryColor,
   },
 
   containerButton: {

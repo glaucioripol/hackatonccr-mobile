@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { View, ScrollView, Text } from 'react-native'
+import { View, ScrollView, Text, Image } from 'react-native'
 import { Feather as Icon } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 
 import { styles } from './styles'
 
-import { primaryColor } from '../../common/colors'
 import { emailText, whatsAppNumber, describeRegisterScreen, continueText } from '../../common/strings'
+import { logoPng } from '../../assets/png'
 
 import { Card, MyInput, RadiusButton } from '../../components'
 import { SelectGender } from './SelectGender'
@@ -36,15 +36,14 @@ export const Register: React.FC = () => {
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <View
-          style={{
-            backgroundColor: primaryColor,
-            width: '100%',
-            height: 170,
-            marginBottom: 16,
-            borderRadius: 4,
-          }}
-        />
+        <View>
+          <Image
+            source={logoPng}
+            height={170}
+            resizeMode="contain"
+            style={{ width: '100%', height: 170, resizeMode: 'contain' }}
+          />
+        </View>
 
         <Text style={[styles.textWithColor, styles.textDescribe]}>{describeRegisterScreen}</Text>
 
