@@ -9,5 +9,5 @@ import { NotAuthenticatedNavigate } from './NotAuthenticatedNavigate'
 export const Routes: React.FC = () => {
   const { authToken } = useSelector(authState)
   // return <>{authToken ? <AuthenticatedNavigate /> : <NotAuthenticatedNavigate />}</>
-  return <>{authToken ? <AuthenticatedNavigate /> : <NotAuthenticatedNavigate />}</>
+  return <>{'' ? <AuthenticatedNavigate /> : <NotAuthenticatedNavigate />}</>
 }
