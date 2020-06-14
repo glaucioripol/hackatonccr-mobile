@@ -6,18 +6,17 @@ import { useNavigation } from '@react-navigation/native'
 import { styles } from './styles'
 
 import { primaryColor } from '../../common/colors'
-import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, continueText } from '../../common/strings'
+import { emailText, whatsAppNumber, describeRegisterScreen, continueText } from '../../common/strings'
 
 import { Card, MyInput, RadiusButton } from '../../components'
-
-import { IcMulher } from '../../assets/svg/IcMulher'
-import { IcHomem } from '../../assets/svg/IcHomem'
+import { SelectGender } from './SelectGender'
 
 export const Register: React.FC = () => {
-  const { navigate } = useNavigation()
+  // const { navigate } = useNavigation()
   const [dataForm, setDataForm] = useState({
     email: '',
     cellphone: '',
+    gender: '',
   })
 
   function handleChangeInputs(fieldName: string) {
@@ -65,19 +64,7 @@ export const Register: React.FC = () => {
           maxLength={11}
         />
 
-        <View style={styles.containerGender}>
-          <Text style={styles.textWithColor}>{whatIsYourGender}</Text>
-          <View style={styles.containerOptionGendersContents}>
-            <View style={styles.containerOptionGenders}>
-              <View style={[styles.optionsItemGender, styles.optionsItemGenderSelected, styles.haveNext]}>
-                <IcHomem selected />
-              </View>
-              <View style={styles.optionsItemGender}>
-                <IcMulher />
-              </View>
-            </View>
-          </View>
-        </View>
+        <SelectGender gender={dataForm.gender} handleChangeSelect={handleChangeInputs('gender')} />
       </Card>
 
       <View style={styles.containerButton}>
