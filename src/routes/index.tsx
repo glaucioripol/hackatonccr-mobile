@@ -1,20 +1,13 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { useSelector } from 'react-redux'
 
-import { BottomBar } from './BottomNavigate'
-import { Home, Details, Register } from '../screens'
+import { authState } from '../redux/auth/selectors'
+
+import { AuthenticatedNavigate } from './AuthenticatedNavigate'
+import { NotAuthenticatedNavigate } from './NotAuthenticatedNavigate'
 
 export const Routes: React.FC = () => {
-  const StackNavigator = createStackNavigator()
-  return (
-    <NavigationContainer>
-      <StackNavigator.Navigator initialRouteName="bottomBar" headerMode="none">
-        <StackNavigator.Screen name="bottomBar" component={BottomBar} />
-        <StackNavigator.Screen name="home" component={Home} />
-        <StackNavigator.Screen name="register" component={Register} />
-        <StackNavigator.Screen name="details" component={Details} />
-      </StackNavigator.Navigator>
-    </NavigationContainer>
-  )
+  const { authToken } = useSelector(authState)
+  // return <>{authToken ? <AuthenticatedNavigate /> : <NotAuthenticatedNavigate />}</>
+  return <>{authToken ? <AuthenticatedNavigate /> : <NotAuthenticatedNavigate />}</>
 }
