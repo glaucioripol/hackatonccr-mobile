@@ -8,5 +8,5 @@
 - adicionar eslint - ok
 - adicionar rotas - ok
 - adicionar redux e redux saga - ok
-- adicionar async storage
-- adiconar redux persist
+- adicionar async storage - ok
+- adiconar redux persist - ok

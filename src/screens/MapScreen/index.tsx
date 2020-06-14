@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { View, Text, Button } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { MyModal } from '../../components'
 
 // import { Container } from './styles';
 
 export const MapScreen: React.FC = () => {
+  const { navigate } = useNavigation()
   const [modalVisible, setModalVisible] = useState(false)
 
   return (
@@ -25,6 +27,13 @@ export const MapScreen: React.FC = () => {
         title="abrir"
         onPress={() => {
           setModalVisible(!modalVisible)
+        }}
+      />
+
+      <Button
+        title="abrir tela de registro"
+        onPress={() => {
+          navigate('register')
         }}
       />
     </View>

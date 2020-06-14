@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
-import { View, ScrollView, Text } from 'react-native'
+import { View, ScrollView, Text, Image } from 'react-native'
 import { Feather as Icon } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 
 import { styles } from './styles'
 
-import { primaryColor } from '../../common/colors'
-import { emailText, whatsAppNumber, describeRegisterScreen, whatIsYourGender, continueText } from '../../common/strings'
+import { emailText, whatsAppNumber, describeRegisterScreen, continueText } from '../../common/strings'
+import { logoPng } from '../../assets/png'
 
 import { Card, MyInput, RadiusButton } from '../../components'
+import { SelectGender } from './SelectGender'
 
 export const Register: React.FC = () => {
-  const { navigate } = useNavigation()
+  // const { navigate } = useNavigation()
   const [dataForm, setDataForm] = useState({
     email: '',
     cellphone: '',
+    gender: '',
   })
 
   function handleChangeInputs(fieldName: string) {
@@ -34,15 +36,14 @@ export const Register: React.FC = () => {
   return (
     <ScrollView style={styles.container}>
       <Card>
-        <View
-          style={{
-            backgroundColor: primaryColor,
-            width: '100%',
-            height: 170,
-            marginBottom: 16,
-            borderRadius: 4,
-          }}
-        />
+        <View>
+          <Image
+            source={logoPng}
+            height={170}
+            resizeMode="contain"
+            style={{ width: '100%', height: 170, resizeMode: 'contain' }}
+          />
+        </View>
 
         <Text style={[styles.textWithColor, styles.textDescribe]}>{describeRegisterScreen}</Text>
 
@@ -62,15 +63,7 @@ export const Register: React.FC = () => {
           maxLength={11}
         />
 
-        <View style={styles.containerGender}>
-          <Text style={styles.textWithColor}>{whatIsYourGender}</Text>
-          <View style={styles.containerOptionGendersContents}>
-            <View style={styles.containerOptionGenders}>
-              <View style={[styles.optionsItemGender, styles.optionsItemGenderSelected, styles.haveNext]} />
-              <View style={styles.optionsItemGender} />
-            </View>
-          </View>
-        </View>
+        <SelectGender gender={dataForm.gender} handleChangeSelect={handleChangeInputs('gender')} />
       </Card>
 
       <View style={styles.containerButton}>
